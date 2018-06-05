@@ -10,12 +10,14 @@ function App() {
         position="Junior Architect / Wongnai"
         title="State Management with MobX"
         description="ใครว่า React มีแค่ Redux? มารู้จักกับ MobX ที่จะทำให้ state management ในแอพของคุณเป็นเรื่องง่ายยย"
+        photo={require('./photo/manatsawin.png')}
       />
       <SpeakerItem
         name="Chakrit Likitkhajorn"
-        position="Vice President/Taskworld"
+        position="Vice President / Taskworld"
         title="State Management in React Apps"
         description="Redux, MobX, Flux pattern หรือ Pure React เรามีเครื่องมือในจัดการ state ใน App มากมายให้เลือก Talk นี้เราจะมาเจาะลึกกันว่าทำไมบางคนชอบ Redux ทำไมบางคนชอบ MobX ทำไม Dan ถึงบอกว่าอย่ารีบใช้อะไรมากกว่า Pure React ตกลงการใช้ มันเป็นเรื่องความชอบส่วนบุคคล หรือเรื่องเลือกของให้เหมาะกับงานกันแน่นะ เราจะเจาะประเด็นนี้กัน"
+        photo={require('./photo/chrisza.jpg')}
       />
     </div>
   )
@@ -28,7 +30,8 @@ function SpeakerItem(props) {
     </div>
   )
 }
-function Speaker({ name, position, title, description }) {
+
+function Speaker({ name, position, title, description, photo, logo }) {
   return (
     <div
       style={{
@@ -45,7 +48,8 @@ function Speaker({ name, position, title, description }) {
           height: 376,
           top: 300,
           borderRadius: '50%',
-          background: `url(${require('./connor.png')}) center no-repeat`,
+          background: `url(${photo ||
+            require('./connor.png')}) center no-repeat`,
           backgroundSize: 'cover',
           overflow: 'hidden',
           left: '50%',
