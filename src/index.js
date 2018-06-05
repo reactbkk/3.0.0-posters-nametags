@@ -97,7 +97,14 @@ function App() {
         name="Rujira Aksornsin"
         position="Lead Frontend Developer / AppMan"
         title="React Performance Tuning"
-        description="แชร์ประสบการณ์และวิธีการ ทำยังไงให้ React web ลื่นไหล จนดูเหมือน Native app บน mobile."
+        description={
+          <div>
+            เมื่อ React application ที่เราทำ ไม่ได้รู้สึกเร็วอีกต่อไปแล้ว
+            มารีวิวจุดผิดพลาด และข้อแก้ไขวิธีต่างๆ ที่ช่วยให้ React application
+            ของเรา smooth ขึ้นเพื่อ 60fps ถึงแม้ว่าจะเป็น mobile web
+            ก็นึกว่าเล่น native app อยู่
+          </div>
+        }
         photo={require('./photo/holly.jpg')}
       />
       <SpeakerItem
@@ -240,7 +247,7 @@ function Speaker({
           position: 'absolute',
           left: 45,
           right: 45,
-          top: 720,
+          top: 710,
           textAlign: 'center',
           color: 'white',
           fontFamily: `Metropolis`,
@@ -250,8 +257,16 @@ function Speaker({
       >
         <div style={{ color: '#00d8ff', fontWeight: 600 }}>{name}</div>
         <div style={{}}>{position}</div>
-        <div style={{ fontWeight: 600 }}>{title}</div>
-        <div>&nbsp;</div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            height: 180,
+            marginTop: 90
+          }}
+        >
+          <div style={{ fontWeight: 700, flex: 1 }}>{title}</div>
+        </div>
         <div
           style={{
             fontFamily: `Noto Sans Thai UI, Noto Sans`,
