@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
+import './design'
 
 function App() {
   return (
@@ -113,4 +114,7 @@ function Speaker({ name, position, title, description, photo, logo }) {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))
-module.hot.accept(() => {})
+
+if (module.hot) {
+  module.hot.accept(() => {})
+}
