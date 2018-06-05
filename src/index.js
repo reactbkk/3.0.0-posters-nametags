@@ -1,13 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import './design'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import "./design";
 
 function Tight({ children }) {
-  return <span style={{ letterSpacing: '-0.05em' }}>{children}</span>
+  return <span style={{ letterSpacing: "-0.05em" }}>{children}</span>;
 }
 function At() {
-  return <span style={{ opacity: 0.5, margin: '0 0.1em' }}>@</span>
+  return <span style={{ opacity: 0.5, margin: "0 0.1em" }}>@</span>;
 }
 
 function App() {
@@ -20,7 +20,11 @@ function App() {
           </div>
         }
         position=""
-        title="Build Awesome Static Website (Gucode) with Gatsby.js"
+        title={
+          <div>
+            Build Awesome Static Website<br /> with Gatsby.js
+          </div>
+        }
         description={
           <Tight>
             เราจะพาทุกท่านรับชมการสร้างเว็บไซต์ Gucode แล้ว Deploy ไปยัง Github
@@ -28,7 +32,7 @@ function App() {
             React
           </Tight>
         }
-        photo={require('./photo/gucode.png')}
+        photo={require("./photo/gucode.png")}
       />
       <SpeakerItem
         name="Keya Desai"
@@ -48,18 +52,32 @@ function App() {
           </div>
         }
         title="State Management with MobX"
-        description="ใครว่า React มีแค่ Redux? มารู้จักกับ MobX ที่จะทำให้ state management ในแอพของคุณเป็นเรื่องง่ายยย"
-        photo={require('./photo/manatsawin.png')}
+        description={
+          <div>
+            ใครว่า React มีแค่ Redux ? มารู้จักกับ MobX <br /> ที่จะทำให้ state
+            management ในแอพของคุณ<br />เป็นเรื่องง่ายยย
+          </div>
+        }
+        photo={require("./photo/manatsawin.png")}
       />
       <SpeakerItem
         name="Phoomparin Mano"
-        position="Developer / iTAX"
+        position={
+          <div>
+            Developer<At />iTAX
+          </div>
+        }
         title="Fast and Furious Development with React Design Patterns 🔥"
         description="How you can use a set of Design Patterns to make your codebase easier to reason about and more concise to write, so you can express your ideas and ship to production in record time."
+        photo={require("./photo/phoom.jpg")}
       />
       <SpeakerItem
         name="Jessada Trirongkit"
-        position="Software Engineer / Oozou"
+        position={
+          <div>
+            Software Engineer<At />Oozou
+          </div>
+        }
         title="Super fast static site with Next.js"
         description={
           <Tight>
@@ -67,7 +85,7 @@ function App() {
             and prefetching (which Next.js doesn’t provide out of the box).
           </Tight>
         }
-        photo={require('./photo/aun.jpg')}
+        photo={require("./photo/aun.jpg")}
       />
       <SpeakerItem
         name="Veha Suwatphisankij"
@@ -95,37 +113,59 @@ function App() {
             project
           </div>
         }
+        photo={require("./photo/veha.jpg")}
       />
       <SpeakerItem
         name="Christopher Ng"
-        position="Mobile developer / Event Pop"
+        position={
+          <div>
+            Mobile developer<At />Event Pop
+          </div>
+        }
         title="KotlinJS + React"
-        description="Demonstrate combination of KotlinJS and React"
+        description={
+          <div>
+            Demonstrate combination of <br /> KotlinJS and React
+          </div>
+        }
+        photo={require("./photo/babe.jpg")}
       />
       <SpeakerItem
         name="Komkanit Sujautra"
-        position="Intern / Jitta"
+        position={
+          <div>
+            Intern<At />Jitta
+          </div>
+        }
         title="My First Time with GraphQL on Production"
         description="พูดถึงประสบการณ์ในการตัดสินใจทดลองใช้ GraphQL ขึ้น Production ครั้งแรกในงานสเกลใหญ่ จะเจ็บปวดแค่ไหน ข้อดีข้อเสียอะไรบ้าง ควรใช้หรือควรหนีไป (พูดถึง NextJS, Apollo, GraphQL)"
-        photo={require('./photo/cal.jpg')}
+        photo={require("./photo/cal.jpg")}
       />
       <SpeakerItem
         name="Rujira Aksornsin"
-        position="Lead Frontend Developer / AppMan"
+        position={
+          <div>
+            Lead Frontend Developer<At />AppMan
+          </div>
+        }
         title="React Performance Tuning"
+        // descriptionScale={7 / 8}
         description={
           <div>
             เมื่อ React application ที่เราทำ ไม่ได้รู้สึกเร็วอีกต่อไปแล้ว
-            มารีวิวจุดผิดพลาด และข้อแก้ไขวิธีต่างๆ ที่ช่วยให้ React application
-            ของเรา smooth ขึ้นเพื่อ 60fps ถึงแม้ว่าจะเป็น mobile web
-            ก็นึกว่าเล่น native app อยู่
+            มารีวิวจุดผิดพลาด และข้อแก้ไขวิธีต่างๆ ที่ช่วยให้ app ของเรา smooth
+            แบบ 60fps ถึงแม้ว่าจะเป็น mobile web ก็นึกว่าเล่น native app อยู่
           </div>
         }
-        photo={require('./photo/holly.jpg')}
+        photo={require("./photo/holly.jpg")}
       />
       <SpeakerItem
         name="Chakrit Likitkhajorn"
-        position="Vice President / Taskworld"
+        position={
+          <div>
+            Vice President<At />Taskworld
+          </div>
+        }
         title="State Management in React Apps"
         scale={1}
         descriptionScale={4 / 5}
@@ -138,13 +178,14 @@ function App() {
             หรือเรื่องเลือกของให้เหมาะกับงานกันแน่นะ เราจะเจาะประเด็นนี้กัน
           </div>
         }
-        photo={require('./photo/chrisza.jpg')}
+        photo={require("./photo/chrisza.jpg")}
       />
       <SpeakerItem
         name="Pallop Chaoputhipuchong"
         position="Software Engineer / Jitta"
         title="Testing React Applications"
         description="Go through between the various forms of testing. Showcase tools and libraries that can help people test their applications for individual cases."
+        photo={require("./photo/ham.jpg")}
       />
       <SpeakerItem
         name="Tananan Tangthanachaikul"
@@ -154,11 +195,11 @@ function App() {
             Experience from building an app<br />in a month using Expo & GraphQL
           </div>
         }
-        descriptionScale={3 / 4}
+        // descriptionScale={3 / 4}
         description={
           <div>
             เล่าประสบการณ์ + สิ่งที่ได้เรียนรู้ + ความปวดหัว จากการพัฒนา Mobile
-            Apps 2 แพลทฟอร์ม โดยใช้ Expo คู่กับ GraphQL Agenda คร่าวๆ
+            Apps 2 แพลทฟอร์ม โดยใช้ Expo คู่กับ GraphQL
             {/* <li>- React-Native คืออะไร และ Expo คืออะไร?</li>
             <li>- ทำไมถึงเลือกใช้ Expo ทำไมไม่ใช้ React-Native</li>
             <li>- ข้อดีของการใช้ Expo</li>
@@ -166,61 +207,62 @@ function App() {
             <li>- เรื่องน่าปวดหัวที่ต้องเจอเมื่อใช้ Expo</li> */}
           </div>
         }
+        photo={require("./photo/benz.jpg")}
       />
       <SpeakerStudio />
     </div>
-  )
+  );
 }
 
 function SpeakerItem(props) {
   return (
-    <div style={{ display: 'inline-block', margin: 10 }}>
+    <div style={{ display: "inline-block", margin: 10 }}>
       <Speaker {...props} />
     </div>
-  )
+  );
 }
 
 class SpeakerStudio extends React.Component {
   state = {
-    name: 'Name',
-    position: 'Position',
-    title: 'Talk Title Should Fit Inside a Single Line',
+    name: "Name",
+    position: "Position",
+    title: "Talk Title Should Fit Inside a Single Line",
     description:
-      'Talk description then goes on. Ideally, it should not be longer than three lines.'
-  }
+      "Talk description then goes on. Ideally, it should not be longer than three lines."
+  };
   render() {
     const renderField = k => (
       <div>
-        <span style={{ fontSize: '60px' }}>{k}: </span>
+        <span style={{ fontSize: "60px" }}>{k}: </span>
         <input
           type="text"
           value={this.state[k]}
           onChange={e => {
-            this.setState({ [k]: e.target.value })
+            this.setState({ [k]: e.target.value });
           }}
-          style={{ fontSize: '60px' }}
+          style={{ fontSize: "60px" }}
         />
       </div>
-    )
+    );
     return (
-      <div style={{ display: 'flex' }}>
-        <div style={{ flex: 'none' }}>
+      <div style={{ display: "flex" }}>
+        <div style={{ flex: "none" }}>
           <Speaker {...this.state} />
         </div>
-        <div style={{ flex: 'none' }}>
-          {renderField('name')}
-          {renderField('position')}
-          {renderField('title')}
+        <div style={{ flex: "none" }}>
+          {renderField("name")}
+          {renderField("position")}
+          {renderField("title")}
           <textarea
             value={this.state.description}
             onChange={e => {
-              this.setState({ description: e.target.value })
+              this.setState({ description: e.target.value });
             }}
-            style={{ fontSize: '60px', width: '20em', height: '5em' }}
+            style={{ fontSize: "60px", width: "20em", height: "5em" }}
           />
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -237,48 +279,48 @@ function Speaker({
   return (
     <div
       style={{
-        background: `url(${require('./speaker_blank.png')})`,
+        background: `url(${require("./speaker_blank.png")})`,
         width: 1272,
         height: 1800,
-        position: 'relative'
+        position: "relative"
       }}
     >
       <div
         style={{
-          position: 'absolute',
+          position: "absolute",
           width: 376,
           height: 376,
           top: 300,
-          borderRadius: '50%',
+          borderRadius: "50%",
           background: `url(${photo ||
-            require('./connor2.png')}) center no-repeat`,
-          backgroundSize: 'cover',
-          overflow: 'hidden',
-          left: '50%',
+            require("./connor2.png")}) center no-repeat`,
+          backgroundSize: "cover",
+          overflow: "hidden",
+          left: "50%",
           marginLeft: 376 / -2
         }}
       />
       <div
         style={{
-          position: 'absolute',
+          position: "absolute",
           left: 45,
           right: 45,
           top: 710,
-          textAlign: 'center',
-          color: 'white',
+          textAlign: "center",
+          color: "white",
           fontFamily: `Metropolis`,
           fontSize: 60 * scale,
           lineHeight: `${90 * scale}px`
         }}
       >
         <div style={{ height: 270 }}>
-          <div style={{ color: '#00d8ff', fontWeight: 600 }}>{name}</div>
+          <div style={{ color: "#00d8ff", fontWeight: 600 }}>{name}</div>
           <div style={{}}>{position}</div>
         </div>
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
+            display: "flex",
+            alignItems: "center",
             height: 180
           }}
         >
@@ -295,11 +337,11 @@ function Speaker({
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById("root"));
 
 if (module.hot) {
-  module.hot.accept(() => {})
+  module.hot.accept(() => {});
 }
