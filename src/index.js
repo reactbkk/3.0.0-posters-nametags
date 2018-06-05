@@ -4,15 +4,22 @@ import './index.css'
 import './design'
 
 function Tight({ children }) {
-  return <span style={{ letterSpacing: '-0.04em' }}>{children}</span>
+  return <span style={{ letterSpacing: '-0.05em' }}>{children}</span>
+}
+function At() {
+  return <span style={{ opacity: 0.5, margin: '0 0.1em' }}>@</span>
 }
 
 function App() {
   return (
     <div>
       <SpeakerItem
-        name={<Tight>Jirat Kijlerdpornpailoj & Suwitcha Sugthana</Tight>}
-        position="GuCode"
+        name={
+          <div>
+            Jirat Kijlerdpornpailoj &<br />Suwitcha Sugthana (GuCode)
+          </div>
+        }
+        position=""
         title="Build Awesome Static Website (Gucode) with Gatsby.js"
         description={
           <Tight>
@@ -21,16 +28,25 @@ function App() {
             React
           </Tight>
         }
+        photo={require('./photo/gucode.png')}
       />
       <SpeakerItem
         name="Keya Desai"
-        position={<Tight>Lead Consultant Developer / ThoughtWorks</Tight>}
+        position={
+          <Tight>
+            Lead Consultant Developer<br />ThoughtWorks
+          </Tight>
+        }
         title="Animation"
         description=""
       />
       <SpeakerItem
         name="Manatsawin Hanmongkolchai"
-        position="Junior Architect / Wongnai"
+        position={
+          <div>
+            Junior Architect<At />Wongnai
+          </div>
+        }
         title="State Management with MobX"
         description="ใครว่า React มีแค่ Redux? มารู้จักกับ MobX ที่จะทำให้ state management ในแอพของคุณเป็นเรื่องง่ายยย"
         photo={require('./photo/manatsawin.png')}
@@ -235,7 +251,7 @@ function Speaker({
           top: 300,
           borderRadius: '50%',
           background: `url(${photo ||
-            require('./connor.png')}) center no-repeat`,
+            require('./connor2.png')}) center no-repeat`,
           backgroundSize: 'cover',
           overflow: 'hidden',
           left: '50%',
@@ -255,14 +271,15 @@ function Speaker({
           lineHeight: `${90 * scale}px`
         }}
       >
-        <div style={{ color: '#00d8ff', fontWeight: 600 }}>{name}</div>
-        <div style={{}}>{position}</div>
+        <div style={{ height: 270 }}>
+          <div style={{ color: '#00d8ff', fontWeight: 600 }}>{name}</div>
+          <div style={{}}>{position}</div>
+        </div>
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
-            height: 180,
-            marginTop: 90
+            height: 180
           }}
         >
           <div style={{ fontWeight: 700, flex: 1 }}>{title}</div>
