@@ -156,20 +156,23 @@ const speakers = {
       photo={require('./photo/babe.jpg')}
     />
   ),
-  komkanit_sujautra: (
+  cal_komkanit: (
     <Speaker
-      name="Komkanit Sujautra"
+      name="Cal Komkanit"
       position={
         <div>
           Intern<At />Jitta
         </div>
       }
-      title="My First Time with GraphQL on Production"
+      title={
+        <div>
+          My First Time with GraphQL<br /> on Production
+        </div>
+      }
       description={
         <Text tight>
-          การตัดสินใจทดลองใช้ GraphQL ขึ้น Production ครั้งแรกในงานสเกลใหญ่
-          จะเจ็บปวดแค่ไหน ข้อดีข้อเสียอะไรบ้าง ควรใช้หรือควรหนีไป (พูดถึง
-          Next.js, Apollo, GraphQL)
+          ประสบการณ์การใช้ GraphQL ขึ้น Production ครั้งแรก รวบรวมเทคนิค และ
+          ปัญหาต่างๆที่เจอ <br />เพื่อเตรียมพร้อมใช้งานจริง
         </Text>
       }
       photo={require('./photo/cal.jpg')}
@@ -180,16 +183,17 @@ const speakers = {
       name="Rujira Aksornsin"
       position={
         <div>
-          Lead Frontend Developer<At />AppMan
+          Frontend Web Lead<At />AppMan
         </div>
       }
       title="React Performance Tuning"
-      // descriptionScale={7 / 8}
+      descriptionScale={7 / 8}
       description={
         <div>
-          เมื่อ React application ที่เราทำ ไม่ได้รู้สึกเร็วอีกต่อไปแล้ว
+          เมื่อ React app ที่เราทำ ไม่ได้รู้สึกเร็วอีกต่อไปแล้ว<br />
           มารีวิวจุดผิดพลาด และข้อแก้ไขวิธีต่างๆ ที่ช่วยให้ app ของเรา smooth
-          แบบ 60fps ถึงแม้ว่าจะเป็น mobile web ก็นึกว่าเล่น native app อยู่
+          แบบ 60fps ถึงแม้ว่าจะเป็น mobile web<br /> ก็นึกว่าเล่น native app
+          อยู่
         </div>
       }
       photo={require('./photo/holly.jpg')}
@@ -208,7 +212,7 @@ const speakers = {
       description={
         <div>
           Redux, MobX, Flux pattern หรือ pure React? <br />
-          เรามีเครื่องมือจัดการ state ใน App มากมายให้เลือก ใน Talk นี้ <br />เราจะมาเจาะลึกกันว่าทำไมบางคนชอบ
+          เรามีเครื่องมือจัดการ state ใน app มากมายให้เลือก ใน talk นี้ <br />เราจะมาเจาะลึกกันว่าทำไมบางคนชอบ
           Redux ทำไมบางคนชอบ MobX ทำไม Dan ถึงบอกว่าอย่ารีบใช้อะไรมากกว่า pure
           React​<br /> ตกลงการใช้มันเป็นเรื่องความชอบส่วนบุคคล
           หรือเรื่องเลือกของให้เหมาะกับงานกันแน่นะ เราจะเจาะประเด็นนี้กัน
