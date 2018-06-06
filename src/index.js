@@ -75,6 +75,7 @@ function App() {
         }
         title="Fast and Furious Development with React Design Patterns 🔥"
         description="How you can use a set of Design Patterns to make your codebase easier to reason about and more concise to write, so you can express your ideas and ship to production in record time."
+        descriptionScale={9 / 10}
         photo={require('./photo/phoom.jpg')}
       />
       <SpeakerItem
@@ -211,7 +212,11 @@ function App() {
       />
       <SpeakerItem
         name="Tananan Tangthanachaikul"
-        position="Full-stack Web Developer / TakeMeTour"
+        position={
+          <div>
+            Full-stack Developer<At />TakeMeTour
+          </div>
+        }
         title={
           <div>
             Experience from building a mobile app in a month using Expo &
