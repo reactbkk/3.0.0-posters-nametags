@@ -59,8 +59,8 @@ const speakers = {
       }
       title="State Management with MobX"
       description={
-        <div>
-          <div style={{ marginBottom: 24 }}>ใครว่า React มีแค่ Redux?</div>
+        <div style={{ fontWeight: 300 }}>
+          <div style={{ fontWeight: 400 }}>ใครว่า React มีแค่ Redux?</div>
           มารู้จักกับ MobX ที่จะทำให้ state management<br />
           ในแอพของคุณเป็นเรื่องง่ายยย
         </div>

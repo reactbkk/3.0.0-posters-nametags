@@ -41,6 +41,11 @@ function injectGlobalStyles() {
       300
     )}
     ${fontFace(
+      require('./vendor/fonts/NotoSans-Regular-Latin.woff2'),
+      'Noto Sans',
+      400
+    )}
+    ${fontFace(
       require('./vendor/fonts/NotoSans-SemiBold-Latin.woff2'),
       'Noto Sans',
       600
@@ -49,6 +54,11 @@ function injectGlobalStyles() {
       require('./vendor/fonts/NotoSansThaiUI-Light.woff2'),
       'Noto Sans Thai UI',
       300
+    )}
+    ${fontFace(
+      require('./vendor/fonts/NotoSansThaiUI-Regular.woff2'),
+      'Noto Sans Thai UI',
+      400
     )}
     ${fontFace(
       require('./vendor/fonts/NotoSansThaiUI-SemiBold.woff2'),
