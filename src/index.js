@@ -13,6 +13,9 @@ function At() {
 function App() {
   return (
     <div>
+      <SpeakerStudio />
+      <hr />
+      <div style={{ fontSize: 80, margin: "40px 0" }}>Example</div>
       <SpeakerItem
         name={
           <div>
@@ -163,7 +166,7 @@ function App() {
         name="Chakrit Likitkhajorn"
         position={
           <div>
-            Vice President<At />Taskworld
+            VP<At />Taskworld
           </div>
         }
         title="State Management in React Apps"
@@ -192,24 +195,18 @@ function App() {
         position="Full-stack Web Developer / TakeMeTour"
         title={
           <div>
-            Experience from building an app<br />in a month using Expo & GraphQL
+            Experience from building a mobile app in a month using Expo &
+            GraphQL
           </div>
         }
         // descriptionScale={3 / 4}
         description={
           <div>
-            เล่าประสบการณ์ + สิ่งที่ได้เรียนรู้ + ความปวดหัว จากการพัฒนา Mobile
-            Apps 2 แพลทฟอร์ม โดยใช้ Expo คู่กับ GraphQL
-            {/* <li>- React-Native คืออะไร และ Expo คืออะไร?</li>
-            <li>- ทำไมถึงเลือกใช้ Expo ทำไมไม่ใช้ React-Native</li>
-            <li>- ข้อดีของการใช้ Expo</li>
-            <li>- GraphQL Subscription อีก 1 ฟีเจอร์ที่ไม่ค่อยมีคนรู้</li>
-            <li>- เรื่องน่าปวดหัวที่ต้องเจอเมื่อใช้ Expo</li> */}
+            หากใครกำลังตัดสินใจที่จะเริ่มทำ Mobile App ด้วย Expo โปรดฟังก่อน!
           </div>
         }
         photo={require("./photo/benz.jpg")}
       />
-      <SpeakerStudio />
     </div>
   );
 }
@@ -228,7 +225,10 @@ class SpeakerStudio extends React.Component {
     position: "Position",
     title: "Talk Title Should Fit Inside a Single Line",
     description:
-      "Talk description then goes on. Ideally, it should not be longer than three lines."
+      "Talk description then goes on. Ideally, it should not be longer than three lines.",
+    photo: require("./connor2.png"),
+    scale: 1,
+    descriptionScale: 1
   };
   render() {
     const renderField = k => (
@@ -245,21 +245,33 @@ class SpeakerStudio extends React.Component {
       </div>
     );
     return (
-      <div style={{ display: "flex" }}>
-        <div style={{ flex: "none" }}>
-          <Speaker {...this.state} />
+      <div style={{ margin: "40px 10px" }}>
+        <div style={{ fontSize: 80, marginBottom: 40 }}>
+          Create your own speaker poster
         </div>
-        <div style={{ flex: "none" }}>
-          {renderField("name")}
-          {renderField("position")}
-          {renderField("title")}
-          <textarea
-            value={this.state.description}
-            onChange={e => {
-              this.setState({ description: e.target.value });
-            }}
-            style={{ fontSize: "60px", width: "20em", height: "5em" }}
-          />
+        <div style={{ display: "flex" }}>
+          <div style={{ flex: "none" }}>
+            <Speaker
+              {...this.state}
+              scale={+this.state.scale}
+              descriptionScale={+this.state.descriptionScale}
+            />
+          </div>
+          <div style={{ flex: "none", padding: 40, border: "1px solid #222" }}>
+            {renderField("name")}
+            {renderField("position")}
+            {renderField("title")}
+            {renderField("scale")}
+            {renderField("photo")}
+            <textarea
+              value={this.state.description}
+              onChange={e => {
+                this.setState({ description: e.target.value });
+              }}
+              style={{ fontSize: "60px", width: "20em", height: "5em" }}
+            />
+            {renderField("descriptionScale")}
+          </div>
         </div>
       </div>
     );
