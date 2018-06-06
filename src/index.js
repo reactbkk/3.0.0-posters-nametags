@@ -2,7 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import './design'
-import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import {
+  HashRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect
+} from 'react-router-dom'
 
 function Text({ children, tight }) {
   return (
@@ -280,8 +286,11 @@ function App() {
         <Route
           path="/:key"
           render={({ match }) => {
-            console.log('match = ', match.params.key)
-            return speakers[match.params.key]
+            const speaker = speakers[match.params.key]
+            if (!speaker) {
+              return <Redirect to="/" />
+            }
+            return speaker
           }}
         />
       </Switch>
