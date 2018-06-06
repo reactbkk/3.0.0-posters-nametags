@@ -37,7 +37,7 @@ const speakers = {
       photo={require('./photo/gucode.png')}
     />
   ),
-  keya: (
+  keya_desai: (
     <Speaker
       name="Keya Desai"
       position={
@@ -49,7 +49,7 @@ const speakers = {
       description=""
     />
   ),
-  manatsawin: (
+  manatsawin_hanmongkolchai: (
     <Speaker
       name="Manatsawin Hanmongkolchai"
       position={
@@ -68,7 +68,7 @@ const speakers = {
       photo={require('./photo/manatsawin.png')}
     />
   ),
-  phoom: (
+  phoomparin_mano: (
     <Speaker
       name="Phoomparin Mano"
       position={
@@ -82,7 +82,7 @@ const speakers = {
       photo={require('./photo/phoom.jpg')}
     />
   ),
-  aun: (
+  jessada_trirongkit: (
     <Speaker
       name="Jessada Trirongkit"
       position={
@@ -100,7 +100,7 @@ const speakers = {
       photo={require('./photo/aun.jpg')}
     />
   ),
-  veha: (
+  veha_suwatphisankij: (
     <Speaker
       name="Veha Suwatphisankij"
       position={
@@ -132,7 +132,7 @@ const speakers = {
       photo={require('./photo/veha.jpg')}
     />
   ),
-  babe: (
+  christopher_ng: (
     <Speaker
       name="Christopher Ng"
       position={
@@ -150,7 +150,7 @@ const speakers = {
       photo={require('./photo/babe.jpg')}
     />
   ),
-  cal: (
+  komkanit_sujautra: (
     <Speaker
       name="Komkanit Sujautra"
       position={
@@ -169,7 +169,7 @@ const speakers = {
       photo={require('./photo/cal.jpg')}
     />
   ),
-  holly: (
+  rujira_aksornsin: (
     <Speaker
       name="Rujira Aksornsin"
       position={
@@ -189,7 +189,7 @@ const speakers = {
       photo={require('./photo/holly.jpg')}
     />
   ),
-  chirst: (
+  chakrit_likitkhajorn: (
     <Speaker
       name="Chakrit Likitkhajorn"
       position={
@@ -213,7 +213,7 @@ const speakers = {
     />
   ),
 
-  ham: (
+  pallop_chaoputhipuchong: (
     <Speaker
       name="Pallop Chaoputhipuchong"
       position={<div>Software Engineer</div>}
@@ -228,7 +228,7 @@ const speakers = {
       photo={require('./photo/ham.jpg')}
     />
   ),
-  benz: (
+  tananan_tangthanachaikul: (
     <Speaker
       name="Tananan Tangthanachaikul"
       position={
