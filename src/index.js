@@ -312,6 +312,7 @@ function Speaker({
       }}
     >
       <div
+        key={photo || 'default'}
         style={{
           position: 'absolute',
           width: 376,
