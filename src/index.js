@@ -59,8 +59,9 @@ function App() {
         title="State Management with MobX"
         description={
           <div>
-            ใครว่า React มีแค่ Redux? มารู้จักกับ MobX <br /> ที่จะทำให้ state
-            management ในแอพของคุณ<br />เป็นเรื่องง่ายยย
+            <div style={{ marginBottom: 24 }}>ใครว่า React มีแค่ Redux?</div>
+            มารู้จักกับ MobX ที่จะทำให้ state management<br />
+            ในแอพของคุณเป็นเรื่องง่ายยย
           </div>
         }
         photo={require('./photo/manatsawin.png')}
@@ -94,7 +95,11 @@ function App() {
       />
       <SpeakerItem
         name="Veha Suwatphisankij"
-        position="Full Stack Engineer / Appsmith Thailand"
+        position={
+          <div>
+            Full Stack Engineer <At /> Appsmith Thailand
+          </div>
+        }
         title={
           <Text tight>
             {/* React and Redux in Another Perspective: */}
@@ -126,10 +131,11 @@ function App() {
             Mobile developer<At />Event Pop
           </div>
         }
-        title="KotlinJS + React"
+        title="Kotlin ❤️  React"
         description={
           <div>
-            Demonstrate combination of <br /> KotlinJS and React
+            Kotlin เป็นภาษาที่ดี และทุกคนก็รัก React <br />
+            มาดูกันว่าเราจะผสมของสองสิ่งนี้ขึ้นมาได้อย่างไร
           </div>
         }
         photo={require('./photo/babe.jpg')}
@@ -180,18 +186,19 @@ function App() {
         descriptionScale={4 / 5}
         description={
           <div>
-            Redux, MobX, Flux pattern หรือ pure React? เรามีเครื่องมือจัดการ
-            state ใน App มากมายให้เลือก Talk นี้เราจะมาเจาะลึกกันว่าทำไมบางคนชอบ
+            Redux, MobX, Flux pattern หรือ pure React? <br />
+            เรามีเครื่องมือจัดการ state ใน App มากมายให้เลือก ใน Talk นี้ <br />เราจะมาเจาะลึกกันว่าทำไมบางคนชอบ
             Redux ทำไมบางคนชอบ MobX ทำไม Dan ถึงบอกว่าอย่ารีบใช้อะไรมากกว่า pure
-            React ตกลงการใช้ มันเป็นเรื่องความชอบส่วนบุคคล
+            React​<br /> ตกลงการใช้มันเป็นเรื่องความชอบส่วนบุคคล
             หรือเรื่องเลือกของให้เหมาะกับงานกันแน่นะ เราจะเจาะประเด็นนี้กัน
           </div>
         }
+        offsetDescription={70}
         photo={require('./photo/chrisza.jpg')}
       />
       <SpeakerItem
         name="Pallop Chaoputhipuchong"
-        position="Software Engineer / Jitta"
+        position={<div>Software Engineer</div>}
         title="Testing React Applications"
         description={
           <Text>
@@ -300,7 +307,8 @@ function Speaker({
   photo,
   logo,
   scale = 1,
-  descriptionScale = 1
+  descriptionScale = 1,
+  offsetDescription = 0
 }) {
   return (
     <div
@@ -340,7 +348,7 @@ function Speaker({
           lineHeight: `${90 * scale}px`
         }}
       >
-        <div style={{ height: 270 }}>
+        <div style={{ height: 270 - offsetDescription }}>
           <div style={{ color: '#00d8ff', fontWeight: 600 }}>{name}</div>
           <div style={{}}>{position}</div>
         </div>
