@@ -260,6 +260,8 @@ class SpeakerStudio extends React.Component {
       <div style={{ margin: '40px 10px' }}>
         <div style={{ fontSize: 80, marginBottom: 40 }}>
           Create your own speaker poster
+          <br />
+          <div style={{ fontSize: 40 }}>Zoom out to use it</div>
         </div>
         <div style={{ display: 'flex' }}>
           <div style={{ flex: 'none' }}>
