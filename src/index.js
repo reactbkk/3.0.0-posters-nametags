@@ -1,13 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import "./design";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import './design'
 
-function Tight({ children }) {
-  return <span style={{ letterSpacing: "-0.05em" }}>{children}</span>;
+function Text({ children, tight }) {
+  return (
+    <span style={{ letterSpacing: tight ? '-0.05em' : 0 }}>{children}</span>
+  )
 }
 function At() {
-  return <span style={{ opacity: 0.5, margin: "0 0.1em" }}>@</span>;
+  return <span style={{ opacity: 0.5, margin: '0' }}> @ </span>
 }
 
 function App() {
@@ -15,31 +17,31 @@ function App() {
     <div>
       <SpeakerItem
         name={
-          <div>
-            Jirat Kijlerdpornpailoj &<br />Suwitcha Sugthana (GuCode)
-          </div>
+          <Text>
+            Jirat Kijlerdpornpailoj &<br />Suwitcha Sugthana (Gucode)
+          </Text>
         }
         position=""
         title={
-          <div>
+          <Text>
             Build Awesome Static Website<br /> with Gatsby.js
-          </div>
+          </Text>
         }
         description={
-          <Tight>
-            เราจะพาทุกท่านรับชมการสร้างเว็บไซต์ Gucode แล้ว Deploy ไปยัง Github
-            Pages ด้วยสิ่งที่เรียก Gatsby.js ซึ่งเป็น Static Site Generator for
+          <Text>
+            เราจะพาทุกท่านรับชมการสร้างเว็บไซต์ Gucode แล้ว deploy ไปยัง Github
+            Pages ด้วยสิ่งที่เรียก Gatsby.js ซึ่งเป็น static site generator for
             React
-          </Tight>
+          </Text>
         }
-        photo={require("./photo/gucode.png")}
+        photo={require('./photo/gucode.png')}
       />
       <SpeakerItem
         name="Keya Desai"
         position={
-          <Tight>
+          <Text>
             Lead Consultant Developer<br />ThoughtWorks
-          </Tight>
+          </Text>
         }
         title="Animation"
         description=""
@@ -54,11 +56,11 @@ function App() {
         title="State Management with MobX"
         description={
           <div>
-            ใครว่า React มีแค่ Redux ? มารู้จักกับ MobX <br /> ที่จะทำให้ state
+            ใครว่า React มีแค่ Redux? มารู้จักกับ MobX <br /> ที่จะทำให้ state
             management ในแอพของคุณ<br />เป็นเรื่องง่ายยย
           </div>
         }
-        photo={require("./photo/manatsawin.png")}
+        photo={require('./photo/manatsawin.png')}
       />
       <SpeakerItem
         name="Phoomparin Mano"
@@ -69,7 +71,7 @@ function App() {
         }
         title="Fast and Furious Development with React Design Patterns 🔥"
         description="How you can use a set of Design Patterns to make your codebase easier to reason about and more concise to write, so you can express your ideas and ship to production in record time."
-        photo={require("./photo/phoom.jpg")}
+        photo={require('./photo/phoom.jpg')}
       />
       <SpeakerItem
         name="Jessada Trirongkit"
@@ -80,27 +82,25 @@ function App() {
         }
         title="Super fast static site with Next.js"
         description={
-          <Tight>
+          <Text>
             How I optimized my Next.js static-exported sites with data spitting
             and prefetching (which Next.js doesn’t provide out of the box).
-          </Tight>
+          </Text>
         }
-        photo={require("./photo/aun.jpg")}
+        photo={require('./photo/aun.jpg')}
       />
       <SpeakerItem
         name="Veha Suwatphisankij"
         position="Full Stack Engineer / Appsmith Thailand"
         title={
-          <Tight>
-            <div>React and Redux in Another Perspective:</div>
-            <div>
-              How Writing Web Apps in ClojureScript Can Help You Shape Idea of
-              React Better
-            </div>
-          </Tight>
+          <Text tight>
+            {/* React and Redux in Another Perspective: */}
+            How Writing Web Apps in ClojureScript Can Help You Shape Idea of
+            React Better
+          </Text>
         }
         description={
-          <div>
+          <Text tight>
             React fundamental idea is data-driven, functional view, view result
             based only on data (prop and state). and redux is functional data
             flow with immutable data store framework. but when Implement that
@@ -111,9 +111,10 @@ function App() {
             Cljs, "reagent" and "re-frame" (react and redux in Cjls world). and
             hopefully, you can pick some idea from Cljs to your current react
             project
-          </div>
+          </Text>
         }
-        photo={require("./photo/veha.jpg")}
+        descriptionScale={4 / 5}
+        photo={require('./photo/veha.jpg')}
       />
       <SpeakerItem
         name="Christopher Ng"
@@ -128,7 +129,7 @@ function App() {
             Demonstrate combination of <br /> KotlinJS and React
           </div>
         }
-        photo={require("./photo/babe.jpg")}
+        photo={require('./photo/babe.jpg')}
       />
       <SpeakerItem
         name="Komkanit Sujautra"
@@ -138,8 +139,14 @@ function App() {
           </div>
         }
         title="My First Time with GraphQL on Production"
-        description="พูดถึงประสบการณ์ในการตัดสินใจทดลองใช้ GraphQL ขึ้น Production ครั้งแรกในงานสเกลใหญ่ จะเจ็บปวดแค่ไหน ข้อดีข้อเสียอะไรบ้าง ควรใช้หรือควรหนีไป (พูดถึง NextJS, Apollo, GraphQL)"
-        photo={require("./photo/cal.jpg")}
+        description={
+          <Text tight>
+            การตัดสินใจทดลองใช้ GraphQL ขึ้น Production ครั้งแรกในงานสเกลใหญ่
+            จะเจ็บปวดแค่ไหน ข้อดีข้อเสียอะไรบ้าง ควรใช้หรือควรหนีไป (พูดถึง
+            Next.js, Apollo, GraphQL)
+          </Text>
+        }
+        photo={require('./photo/cal.jpg')}
       />
       <SpeakerItem
         name="Rujira Aksornsin"
@@ -157,7 +164,7 @@ function App() {
             แบบ 60fps ถึงแม้ว่าจะเป็น mobile web ก็นึกว่าเล่น native app อยู่
           </div>
         }
-        photo={require("./photo/holly.jpg")}
+        photo={require('./photo/holly.jpg')}
       />
       <SpeakerItem
         name="Chakrit Likitkhajorn"
@@ -167,25 +174,30 @@ function App() {
           </div>
         }
         title="State Management in React Apps"
-        scale={1}
         descriptionScale={4 / 5}
         description={
           <div>
-            Redux, MobX, Flux pattern หรือ Pure React เรามีเครื่องมือในจัดการ
+            Redux, MobX, Flux pattern หรือ pure React? เรามีเครื่องมือจัดการ
             state ใน App มากมายให้เลือก Talk นี้เราจะมาเจาะลึกกันว่าทำไมบางคนชอบ
-            Redux ทำไมบางคนชอบ MobX ทำไม Dan ถึงบอกว่าอย่ารีบใช้อะไรมากกว่า Pure
+            Redux ทำไมบางคนชอบ MobX ทำไม Dan ถึงบอกว่าอย่ารีบใช้อะไรมากกว่า pure
             React ตกลงการใช้ มันเป็นเรื่องความชอบส่วนบุคคล
             หรือเรื่องเลือกของให้เหมาะกับงานกันแน่นะ เราจะเจาะประเด็นนี้กัน
           </div>
         }
-        photo={require("./photo/chrisza.jpg")}
+        photo={require('./photo/chrisza.jpg')}
       />
       <SpeakerItem
         name="Pallop Chaoputhipuchong"
         position="Software Engineer / Jitta"
         title="Testing React Applications"
-        description="Go through between the various forms of testing. Showcase tools and libraries that can help people test their applications for individual cases."
-        photo={require("./photo/ham.jpg")}
+        description={
+          <Text>
+            Go through between the various forms of testing. Showcase tools and
+            libraries that can help people test their applications for
+            individual cases.
+          </Text>
+        }
+        photo={require('./photo/ham.jpg')}
       />
       <SpeakerItem
         name="Tananan Tangthanachaikul"
@@ -207,62 +219,62 @@ function App() {
             <li>- เรื่องน่าปวดหัวที่ต้องเจอเมื่อใช้ Expo</li> */}
           </div>
         }
-        photo={require("./photo/benz.jpg")}
+        photo={require('./photo/benz.jpg')}
       />
       <SpeakerStudio />
     </div>
-  );
+  )
 }
 
 function SpeakerItem(props) {
   return (
-    <div style={{ display: "inline-block", margin: 10 }}>
+    <div style={{ display: 'inline-block', margin: 10 }}>
       <Speaker {...props} />
     </div>
-  );
+  )
 }
 
 class SpeakerStudio extends React.Component {
   state = {
-    name: "Name",
-    position: "Position",
-    title: "Talk Title Should Fit Inside a Single Line",
+    name: 'Name',
+    position: 'Position',
+    title: 'Talk Title Should Fit Inside a Single Line',
     description:
-      "Talk description then goes on. Ideally, it should not be longer than three lines."
-  };
+      'Talk description then goes on. Ideally, it should not be longer than three lines.'
+  }
   render() {
     const renderField = k => (
       <div>
-        <span style={{ fontSize: "60px" }}>{k}: </span>
+        <span style={{ fontSize: '60px' }}>{k}: </span>
         <input
           type="text"
           value={this.state[k]}
           onChange={e => {
-            this.setState({ [k]: e.target.value });
+            this.setState({ [k]: e.target.value })
           }}
-          style={{ fontSize: "60px" }}
+          style={{ fontSize: '60px' }}
         />
       </div>
-    );
+    )
     return (
-      <div style={{ display: "flex" }}>
-        <div style={{ flex: "none" }}>
+      <div style={{ display: 'flex' }}>
+        <div style={{ flex: 'none' }}>
           <Speaker {...this.state} />
         </div>
-        <div style={{ flex: "none" }}>
-          {renderField("name")}
-          {renderField("position")}
-          {renderField("title")}
+        <div style={{ flex: 'none' }}>
+          {renderField('name')}
+          {renderField('position')}
+          {renderField('title')}
           <textarea
             value={this.state.description}
             onChange={e => {
-              this.setState({ description: e.target.value });
+              this.setState({ description: e.target.value })
             }}
-            style={{ fontSize: "60px", width: "20em", height: "5em" }}
+            style={{ fontSize: '60px', width: '20em', height: '5em' }}
           />
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -279,48 +291,48 @@ function Speaker({
   return (
     <div
       style={{
-        background: `url(${require("./speaker_blank.png")})`,
+        background: `url(${require('./speaker_blank.png')})`,
         width: 1272,
         height: 1800,
-        position: "relative"
+        position: 'relative'
       }}
     >
       <div
         style={{
-          position: "absolute",
+          position: 'absolute',
           width: 376,
           height: 376,
           top: 300,
-          borderRadius: "50%",
+          borderRadius: '50%',
           background: `url(${photo ||
-            require("./connor2.png")}) center no-repeat`,
-          backgroundSize: "cover",
-          overflow: "hidden",
-          left: "50%",
+            require('./connor2.png')}) center no-repeat`,
+          backgroundSize: 'cover',
+          overflow: 'hidden',
+          left: '50%',
           marginLeft: 376 / -2
         }}
       />
       <div
         style={{
-          position: "absolute",
+          position: 'absolute',
           left: 45,
           right: 45,
           top: 710,
-          textAlign: "center",
-          color: "white",
+          textAlign: 'center',
+          color: 'white',
           fontFamily: `Metropolis`,
           fontSize: 60 * scale,
           lineHeight: `${90 * scale}px`
         }}
       >
         <div style={{ height: 270 }}>
-          <div style={{ color: "#00d8ff", fontWeight: 600 }}>{name}</div>
+          <div style={{ color: '#00d8ff', fontWeight: 600 }}>{name}</div>
           <div style={{}}>{position}</div>
         </div>
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
+            display: 'flex',
+            alignItems: 'center',
             height: 180
           }}
         >
@@ -337,11 +349,11 @@ function Speaker({
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'))
 
 if (module.hot) {
-  module.hot.accept(() => {});
+  module.hot.accept(() => {})
 }
