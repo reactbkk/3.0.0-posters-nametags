@@ -101,11 +101,11 @@ export const speakers = {
           Software Engineer<At />Oozou
         </div>
       }
-      title="Super fast static site with Next.js"
+      title="It's Next.js but it's static and it's fast"
       description={
         <Text>
-          How I optimized my Next.js static-exported sites with data spitting
-          and prefetching (which Next.js doesn’t provide out of the box).
+          How I optimized, configured, and accelerated my Next.js
+          static-exported site with data splitting and prefetching.
         </Text>
       }
       photo={require('./photo/aun.jpg')}
@@ -175,10 +175,13 @@ export const speakers = {
         </div>
       }
       description={
-        <Text tight>
-          ประสบการณ์การใช้ GraphQL ขึ้น Production ครั้งแรก รวบรวมเทคนิค และ
-          ปัญหาต่างๆที่เจอ <br />เพื่อเตรียมพร้อมใช้งานจริง
-        </Text>
+        <div>
+          <Text weight={400} tight>
+            ประสบการณ์การใช้ GraphQL ขึ้น Production ครั้งแรก
+          </Text>
+          <br />
+          รวบรวมเทคนิค และ ปัญหาต่างๆที่เจอ <br />เพื่อเตรียมพร้อมใช้งานจริง
+        </div>
       }
       photo={require('./photo/cal.jpg')}
     />
