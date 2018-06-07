@@ -1,3 +1,4 @@
+const puppeteer = require('puppeteer')
 const speakerKeys = [
   'gucode',
   'keya_desai',
@@ -12,19 +13,27 @@ const speakerKeys = [
   'pallop_chaoputhipuchong',
   'tananan_tangthanachaikul'
 ]
-const puppeteer = require('puppeteer')
+
+const takeSpeakerScreenshot = async (page, key) => {
+  const path = `screenshots/${key}.jpg`
+  await page.goto(`http://localhost:3000/#/${key}`)
+  await page.screenshot({ path })
+  console.log(`${path} created`)
+}
 ;(async () => {
+  const [, , key] = process.argv
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
   page.setViewport({
     width: 1272,
     height: 1800
   })
-  for (let i = 0; i < speakerKeys.length; i++) {
-    const path = `screenshots/${speakerKeys[i]}.jpg`
-    await page.goto(`http://localhost:3000/#/${speakerKeys[i]}`)
-    await page.screenshot({ path })
-    console.log(`${path} created`)
+  if (key && speakerKeys.includes(key)) {
+    await takeSpeakerScreenshot(page, key)
+  } else {
+    for (let i = 0; i < speakerKeys.length; i++) {
+      await takeSpeakerScreenshot(page, speakerKeys[i])
+    }
   }
 
   await browser.close()
