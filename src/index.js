@@ -21,7 +21,7 @@ function At() {
   return <span style={{ opacity: 0.5, margin: '0' }}> @ </span>
 }
 
-const speakers = {
+export const speakers = {
   gucode: (
     <Speaker
       name={
@@ -256,14 +256,15 @@ const speakers = {
         </div>
       }
       title={
-        <div>
-          Experience from building a mobile app in a month using Expo & GraphQL
-        </div>
+        <div>Experience from building a mobile app using Expo & GraphQL</div>
       }
-      // descriptionScale={3 / 4}
+      // descriptionScale={4 / 5}
       description={
         <div>
-          หากใครกำลังตัดสินใจที่จะเริ่มทำ Mobile App ด้วย Expo โปรดฟังก่อน!
+          <Text weight={400}>หากใครกำลังตัดสินใจที่จะใช้ Expo โปรดฟัง!</Text>
+          <br />
+          จะมาเล่าเรื่องราวความสนุก (และความหัวร้อน) ของการทำ Mobile App ด้วย
+          Expo รวมถึงเรื่องที่ต้องคิด <br /> เมื่อจะใช้ Expo
         </div>
       }
       photo={require('./photo/benz.jpg')}
@@ -449,8 +450,9 @@ function Speaker({
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
-
-if (module.hot) {
-  module.hot.accept(() => {})
+if (typeof document !== 'undefined') {
+  ReactDOM.render(<App />, document.getElementById('root'))
+  if (module.hot) {
+    module.hot.accept(() => {})
+  }
 }
