@@ -10,9 +10,11 @@ import {
   Redirect
 } from 'react-router-dom'
 
-function Text({ children, tight }) {
+function Text({ children, tight, weight }) {
   return (
-    <span style={{ letterSpacing: tight ? '-0.05em' : 0 }}>{children}</span>
+    <span style={{ letterSpacing: tight ? '-0.05em' : 0, fontWeight: weight }}>
+      {children}
+    </span>
   )
 }
 function At() {
@@ -35,9 +37,12 @@ const speakers = {
       }
       description={
         <Text>
-          เราจะพาทุกท่านรับชมการสร้างเว็บไซต์ Gucode แล้ว deploy ไปยัง Github
-          Pages ด้วยสิ่งที่เรียก Gatsby.js ซึ่งเป็น static site generator for
-          React
+          <Text weight={400}>เราจะพาทุกท่านรับชมการสร้างเว็บไซต์ Gucode</Text>
+          <br />
+          <span style={{ letterSpacing: '-0.025em' }}>
+            ด้วยสิ่งที่เรียกว่า Gatsby.js ซึ่งเป็น static site generator for
+            React แล้ว deploy ไปยัง GitHub Pages
+          </span>
         </Text>
       }
       photo={require('./photo/gucode.png')}
@@ -190,7 +195,10 @@ const speakers = {
       descriptionScale={7 / 8}
       description={
         <div>
-          เมื่อ React app ที่เราทำ ไม่ได้รู้สึกเร็วอีกต่อไปแล้ว<br />
+          <Text weight={400}>
+            เมื่อ React app ที่เราทำ ไม่ได้รู้สึกเร็วอีกต่อไปแล้ว
+          </Text>
+          <br />
           มารีวิวจุดผิดพลาด และข้อแก้ไขวิธีต่างๆ ที่ช่วยให้ app ของเรา smooth
           แบบ 60fps ถึงแม้ว่าจะเป็น mobile web<br /> ก็นึกว่าเล่น native app
           อยู่
@@ -211,7 +219,8 @@ const speakers = {
       descriptionScale={4 / 5}
       description={
         <div>
-          Redux, MobX, Flux pattern หรือ pure React? <br />
+          <Text weight={400}>Redux, MobX, Flux pattern หรือ pure React?</Text>
+          <br />
           เรามีเครื่องมือจัดการ state ใน app มากมายให้เลือก ใน talk นี้ <br />เราจะมาเจาะลึกกันว่าทำไมบางคนชอบ
           Redux ทำไมบางคนชอบ MobX ทำไม Dan ถึงบอกว่าอย่ารีบใช้อะไรมากกว่า pure
           React​<br /> ตกลงการใช้มันเป็นเรื่องความชอบส่วนบุคคล
@@ -429,7 +438,8 @@ function Speaker({
           style={{
             fontFamily: `Noto Sans Thai UI, Noto Sans`,
             fontSize: `${descriptionScale * 0.9}em`,
-            lineHeight: `${90 * scale * descriptionScale}px`
+            lineHeight: `${90 * scale * descriptionScale}px`,
+            fontWeight: 300
           }}
         >
           {description}
