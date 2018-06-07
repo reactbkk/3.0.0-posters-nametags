@@ -204,7 +204,7 @@ const speakers = {
       name="Chakrit Likitkhajorn"
       position={
         <div>
-          VP<At />Taskworld
+          VP Engineering<At />Taskworld
         </div>
       }
       title="State Management in React Apps"
