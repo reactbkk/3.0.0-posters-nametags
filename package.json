@@ -10,10 +10,14 @@
     "react-router-dom": "4.3.0",
     "react-scripts": "1.1.4"
   },
+  "devDependencies": {
+    "puppeteer": "1.4.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "take-screenshot": "mkdir -p screenshots && node src/take-screenshot.js"
   }
 }
