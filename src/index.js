@@ -25,7 +25,7 @@ export const speakers = {
   gucode: (
     <Speaker
       name={
-        <Text>
+        <Text tight>
           Jirat Kijlerdpornpailoj &<br />Suwitcha Sugthana (Gucode)
         </Text>
       }
