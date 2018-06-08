@@ -242,9 +242,13 @@ export const speakers = {
       title="Testing React Applications"
       description={
         <Text>
-          Go through between the various forms of testing. Showcase tools and
-          libraries that can help people test their applications for individual
-          cases.
+          <Text weight={400}>
+            Test สามารถช่วยให้เรา ship software ได้อย่างมั่นใจ
+          </Text>
+          <br />
+          แต่หาก test ด้วยแนวคิดที่ไม่ดี มันอาจนำไปสู่เส้นทางแห่งความยากลำบาก
+          เราจะพาไปดูว่า ด้วยแนวคิดที่ดีและเครื่องมือที่ใช่ การเขียน test
+          จะไม่ใช่เรื่องยากอีกต่อไป
         </Text>
       }
       photo={require('./photo/ham.jpg')}
