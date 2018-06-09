@@ -56,8 +56,10 @@ export const speakers = {
           Lead Consultant Developer<br />ThoughtWorks
         </Text>
       }
-      title="Animation"
-      description=""
+      title="Animating in React"
+      descriptionScale={7 / 8}
+      description="Join in the fun as I will demonstrate how animations can be applied to add style and substance to any page and how to develop simple animated micro interactions with ease using react"
+      photo={require('./photo/keya.jpg')}
     />
   ),
   manatsawin_hanmongkolchai: (
