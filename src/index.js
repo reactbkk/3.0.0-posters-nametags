@@ -117,31 +117,22 @@ export const speakers = {
     <Speaker
       name="Veha Suwatphisankij"
       position={
-        <div>
-          Full Stack Engineer <At /> Appsmith Thailand
-        </div>
+        <Text tight>
+          Developer<At />Appsmiths (th)
+        </Text>
       }
       title={
-        <Text tight>
-          {/* React and Redux in Another Perspective: */}
-          How Writing Web Apps in ClojureScript Can Help You Shape Idea of React
-          Better
+        <Text>
+          React, Redux’ s core idea <br />with Clojurescript
         </Text>
       }
       description={
         <Text tight>
-          React fundamental idea is data-driven, functional view, view result
-          based only on data (prop and state). and redux is functional data flow
-          with immutable data store framework. but when Implement that idea on
-          language that does not fit the idea, the result can be cumbersome. in
-          the parallel world, the Clojurescript fundamental idea is immutable,
-          functional programming and data-driven. In this talk, I will show you
-          how each piece of the idea fit together in Cljs, "reagent" and
-          "re-frame" (react and redux in Cjls world). and hopefully, you can
-          pick some idea from Cljs to your current react project
+          เราจะนำ React, Redux ไปเทียบกับสิ่งที่คล้ายกันบนภาษา Clojurescript
+          ศึกษา, เรียนรู้, ลองใช้และนำแนวคิดต่าง ๆ กลับไปใช้บน js
+          หรือคุณอาจไม่อยากกลับไปอีกเลย
         </Text>
       }
-      descriptionScale={4 / 5}
       photo={require('./photo/veha.jpg')}
     />
   ),
