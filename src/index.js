@@ -22,11 +22,11 @@ function At() {
   return <span style={{ opacity: 0.5, margin: '0' }}> @ </span>
 }
 
-const speakers = {
+export const speakers = {
   gucode: (
     <Speaker
       name={
-        <Text>
+        <Text tight>
           Jirat Kijlerdpornpailoj &<br />Suwitcha Sugthana (Gucode)
         </Text>
       }
@@ -57,8 +57,10 @@ const speakers = {
           Lead Consultant Developer<br />ThoughtWorks
         </Text>
       }
-      title="Animation"
-      description=""
+      title="Animating in React"
+      descriptionScale={7 / 8}
+      description="Join in the fun as I will demonstrate how animations can be applied to add style and substance to any page and how to develop simple animated micro interactions with ease using react"
+      photo={require('./photo/keya.jpg')}
     />
   ),
   manatsawin_hanmongkolchai: (
@@ -102,11 +104,11 @@ const speakers = {
           Software Engineer<At />Oozou
         </div>
       }
-      title="Super fast static site with Next.js"
+      title="It's Next.js but it's static and it's fast"
       description={
         <Text>
-          How I optimized my Next.js static-exported sites with data spitting
-          and prefetching (which Next.js doesn’t provide out of the box).
+          How I optimized, configured, and accelerated my Next.js
+          static-exported site with data splitting and prefetching.
         </Text>
       }
       photo={require('./photo/aun.jpg')}
@@ -116,31 +118,22 @@ const speakers = {
     <Speaker
       name="Veha Suwatphisankij"
       position={
-        <div>
-          Full Stack Engineer <At /> Appsmith Thailand
-        </div>
+        <Text tight>
+          Developer<At />Appsmiths (th)
+        </Text>
       }
       title={
-        <Text tight>
-          {/* React and Redux in Another Perspective: */}
-          How Writing Web Apps in ClojureScript Can Help You Shape Idea of React
-          Better
+        <Text>
+          React, Redux’ s core idea <br />with Clojurescript
         </Text>
       }
       description={
         <Text tight>
-          React fundamental idea is data-driven, functional view, view result
-          based only on data (prop and state). and redux is functional data flow
-          with immutable data store framework. but when Implement that idea on
-          language that does not fit the idea, the result can be cumbersome. in
-          the parallel world, the Clojurescript fundamental idea is immutable,
-          functional programming and data-driven. In this talk, I will show you
-          how each piece of the idea fit together in Cljs, "reagent" and
-          "re-frame" (react and redux in Cjls world). and hopefully, you can
-          pick some idea from Cljs to your current react project
+          เราจะนำ React, Redux ไปเทียบกับสิ่งที่คล้ายกันบนภาษา Clojurescript
+          ศึกษา, เรียนรู้, ลองใช้และนำแนวคิดต่าง ๆ กลับไปใช้บน js
+          หรือคุณอาจไม่อยากกลับไปอีกเลย
         </Text>
       }
-      descriptionScale={4 / 5}
       photo={require('./photo/veha.jpg')}
     />
   ),
@@ -176,10 +169,13 @@ const speakers = {
         </div>
       }
       description={
-        <Text tight>
-          ประสบการณ์การใช้ GraphQL ขึ้น Production ครั้งแรก รวบรวมเทคนิค และ
-          ปัญหาต่างๆที่เจอ <br />เพื่อเตรียมพร้อมใช้งานจริง
-        </Text>
+        <div>
+          <Text weight={400} tight>
+            ประสบการณ์การใช้ GraphQL ขึ้น Production ครั้งแรก
+          </Text>
+          <br />
+          รวบรวมเทคนิค และ ปัญหาต่างๆที่เจอ <br />เพื่อเตรียมพร้อมใช้งานจริง
+        </div>
       }
       photo={require('./photo/cal.jpg')}
     />
@@ -240,9 +236,13 @@ const speakers = {
       title="Testing React Applications"
       description={
         <Text>
-          Go through between the various forms of testing. Showcase tools and
-          libraries that can help people test their applications for individual
-          cases.
+          <Text weight={400}>
+            Test สามารถช่วยให้เรา ship software ได้อย่างมั่นใจ
+          </Text>
+          <br />
+          แต่หาก test ด้วยแนวคิดที่ไม่ดี มันอาจนำไปสู่เส้นทางแห่งความยากลำบาก
+          เราจะพาไปดูว่า ด้วยแนวคิดที่ดีและเครื่องมือที่ใช่ การเขียน test
+          จะไม่ใช่เรื่องยากอีกต่อไป
         </Text>
       }
       photo={require('./photo/ham.jpg')}
@@ -257,14 +257,15 @@ const speakers = {
         </div>
       }
       title={
-        <div>
-          Experience from building a mobile app in a month using Expo & GraphQL
-        </div>
+        <div>Experience from building a mobile app using Expo & GraphQL</div>
       }
-      // descriptionScale={3 / 4}
+      // descriptionScale={4 / 5}
       description={
         <div>
-          หากใครกำลังตัดสินใจที่จะเริ่มทำ Mobile App ด้วย Expo โปรดฟังก่อน!
+          <Text weight={400}>หากใครกำลังตัดสินใจที่จะใช้ Expo โปรดฟัง!</Text>
+          <br />
+          จะมาเล่าเรื่องราวความสนุก (และความหัวร้อน) ของการทำ Mobile App ด้วย
+          Expo รวมถึงเรื่องที่ต้องคิด <br /> เมื่อจะใช้ Expo
         </div>
       }
       photo={require('./photo/benz.jpg')}
@@ -453,8 +454,9 @@ function Speaker({
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
-
-if (module.hot) {
-  module.hot.accept(() => {})
+if (typeof document !== 'undefined') {
+  ReactDOM.render(<App />, document.getElementById('root'))
+  if (module.hot) {
+    module.hot.accept(() => {})
+  }
 }
