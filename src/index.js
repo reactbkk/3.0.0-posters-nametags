@@ -9,6 +9,7 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom'
+import { NameCardPage } from './NameCardPage'
 
 function Text({ children, tight, weight }) {
   return (
@@ -299,6 +300,9 @@ function App() {
         <Route
           path="/:key"
           render={({ match }) => {
+            if (match.params.key) {
+              return <NameCardPage />
+            }
             const speaker = speakers[match.params.key]
             if (!speaker) {
               return <Redirect to="/" />
