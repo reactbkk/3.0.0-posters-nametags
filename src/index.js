@@ -274,18 +274,21 @@ export const speakers = {
     <Speaker
       name="Suphareuk Theamparn"
       position={
-        <div style={{ fontSize: '80%' }}>
-          <Text tight>
-            Frontend Developer<At />Telenor Digital Asia
+        <Text>
+          <Text>
+            Frontend Developer
           </Text>
-        </div>
+          <br />
+          <span style={{fontSize: 60}}>Telenor Digital Asia</span>
+        </Text>
       }
-      title={<div>Wowbox and React</div>}
+      title={<div><br/>React for a 5 million user app</div>}
       // descriptionScale={4 / 5}
       description={
-        <div>
-          How we use React and other React tools/technologies with Wowbox in the
-          present and in future.
+        <div style={{fontSize:48}}>
+          How we use React and other <br />
+          React tools/technologies with Wowbox <br />
+          <Text>in the present and in the future.</Text>
         </div>
       }
       photo={require('./photo/toon.jpg')}
