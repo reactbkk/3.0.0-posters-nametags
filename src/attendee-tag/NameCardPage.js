@@ -1,6 +1,8 @@
 import React from 'react'
 
-const data = require('./namecard.json')
+const data = require('../data/attendees.json')
+
+/** @type {React.SFC<any>} */
 export function NameCardPage({ index }) {
   const c = index === undefined ? data : [data[index]].filter(x => x)
   return (
@@ -46,7 +48,7 @@ export function NameCardPage({ index }) {
                     style={{
                       fontSize: '120px',
                       lineHeight: '1.2em',
-                      fontWeight: '700'
+                      fontWeight: 700
                     }}
                   >
                     {t['ชื่อที่แสดงบนป้ายชื่อ']}
@@ -64,7 +66,7 @@ export function NameCardPage({ index }) {
                     style={{
                       fontSize: '48px',
                       lineHeight: '1.3em',
-                      fontWeight: '700'
+                      fontWeight: 700
                     }}
                   >
                     {t['ตำแหน่ง / ชั้นปี']}
