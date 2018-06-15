@@ -119,7 +119,7 @@ export const speakers = {
       name="Veha Suwatphisankij"
       position={
         <Text tight>
-          Developer<At />Appsmiths (th)
+          Clojure​ Developer<At />Appsmiths (th)
         </Text>
       }
       title={
@@ -269,6 +269,30 @@ export const speakers = {
         </div>
       }
       photo={require('./photo/benz.jpg')}
+    />
+  ),
+  suphareuk_theamparn: (
+    <Speaker
+      name="Suphareuk Theamparn"
+      position={
+        <Text>
+          <Text>
+            Frontend Developer
+          </Text>
+          <br />
+          <span style={{fontSize: 60}}>Telenor Digital Asia</span>
+        </Text>
+      }
+      title={<div><br/>React for a 5 million user app</div>}
+      // descriptionScale={4 / 5}
+      description={
+        <div style={{fontSize:48}}>
+          How we use React and other <br />
+          React tools/technologies with Wowbox <br />
+          <Text>in the present and in the future.</Text>
+        </div>
+      }
+      photo={require('./photo/toon.jpg')}
     />
   )
 }

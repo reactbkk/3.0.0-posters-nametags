@@ -11,7 +11,8 @@ const speakerKeys = [
   'rujira_aksornsin',
   'chakrit_likitkhajorn',
   'pallop_chaoputhipuchong',
-  'tananan_tangthanachaikul'
+  'tananan_tangthanachaikul',
+  'suphareuk_theamparn'
 ]
 
 const takeSpeakerScreenshot = async (page, key) => {
