@@ -1,6 +1,12 @@
 import { overrides, sponsoredTickets, SPEAKERS } from './overrides'
 
-const data = require('../data/attendees.json')
+// @ts-ignore
+const dataContext = require.context('../data/', false, /\.json$/)
+const data = (() => {
+  if (dataContext.keys().includes('./attendees.json')) {
+    return dataContext('./attendees.json')
+  }
+})()
 
 /**
  * @typedef {Object} Attendee
@@ -20,7 +26,7 @@ const sth = s =>
     .replace(/^[ืิ]*/, '')
     .replace(/^\s*-\s*$/, '')
 
-for (const t of data) {
+for (const t of data || []) {
   const override = overrides[t['Ticket']] || {}
 
   let position = t['ตำแหน่ง / ชั้นปี']
@@ -74,3 +80,31 @@ for (const t of data) {
                                   : 'unknown'
   })
 }
+
+if (!attendees.length) {
+  let x = 0
+  const example = type => ({
+    name: 'Test data',
+    position: `${type.substr(0, 1).toUpperCase() + type.substr(1)}`,
+    company: 'React Bangkok',
+    ticket: ++x,
+    refCode: '000000',
+    ticketType: type
+  })
+  attendees.push(
+    example('speaker'),
+    example('general'),
+    example('codeManiac'),
+    example('communityInfluencer'),
+    example('media'),
+    example('contributor'),
+    example('boothStaff'),
+    example('eventStaff'),
+    example('individualSponsor'),
+    example('platinumSponsor'),
+    example('goldSponsor'),
+    example('silverSponsor')
+  )
+}
+
+Object.assign(window, { attendees })
