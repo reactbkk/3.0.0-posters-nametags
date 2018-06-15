@@ -23,8 +23,12 @@ function App() {
 function renderHome() {
   return (
     <ul>
-      <Link to="/speakers">Speaker posters</Link>
-      <Link to="/attendees">Attendees name tags</Link>
+      <li>
+        <Link to="/speakers">Speaker posters</Link>
+      </li>
+      <li>
+        <Link to="/attendees">Attendees name tags</Link>
+      </li>
     </ul>
   )
 }
