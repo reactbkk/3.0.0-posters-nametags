@@ -60,7 +60,7 @@ export const speakers = {
       title="Animating in React"
       descriptionScale={7 / 8}
       description="Join in the fun as I will demonstrate how animations can be applied to add style and substance to any page and how to develop simple animated micro interactions with ease using react"
-      photo={require('./photo/keya.jpg')}
+      // photo={require('./photo/keya.jpg')}
     />
   ),
   manatsawin_hanmongkolchai: (
@@ -301,8 +301,12 @@ function App() {
         <Route
           path="/:key"
           render={({ match }) => {
-            if (match.params.key) {
+            if (match.params.key === 'attendees') {
               return <NameCardPage />
+            }
+            const m = match.params.key.match(/a(\d+)/)
+            if (m) {
+              return <NameCardPage index={+m[1]} />
             }
             const speaker = speakers[match.params.key]
             if (!speaker) {

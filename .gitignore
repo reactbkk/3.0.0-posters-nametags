@@ -19,3 +19,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/namecards/
+/data/*
+!/data/README.md
+/src/data/*
+!/src/data/README.md
