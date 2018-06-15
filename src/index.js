@@ -272,10 +272,12 @@ export const speakers = {
   ),
   suphareuk_theamparn: (
     <Speaker
-      name="Tananan Tangthanachaikul"
+      name="Suphareuk Theamparn"
       position={
-        <div>
-          Frontend Developer<br />Telenor Digital Asia
+        <div style={{ fontSize: '80%' }}>
+          <Text tight>
+            Frontend Developer<At />Telenor Digital Asia
+          </Text>
         </div>
       }
       title={<div>Wowbox and React</div>}
@@ -286,6 +288,7 @@ export const speakers = {
           present and in future.
         </div>
       }
+      photo={require('./photo/toon.jpg')}
     />
   )
 }

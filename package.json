@@ -18,6 +18,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "take-screenshot": "mkdir -p screenshots && node src/take-screenshot.js"
+    "take-screenshot": "node src/take-screenshot.js"
   }
 }
