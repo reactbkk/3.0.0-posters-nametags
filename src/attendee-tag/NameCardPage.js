@@ -1,14 +1,11 @@
 import React, { Fragment } from 'react'
 import { FIRST_BATCH_PRINTED } from './printed'
 import { overrides } from './overrides'
-
-const data = require('../data/attendees.json')
-
-console.log(data)
+import { attendees } from './attendees'
 
 /** @type {React.SFC<any>} */
 export function NameCardPage({ index }) {
-  const c = index === undefined ? data : [data[index]].filter(x => x)
+  const c = index === undefined ? attendees : [attendees[index]].filter(x => x)
   return (
     <div>
       {c.map((t, i) => {
@@ -18,23 +15,29 @@ export function NameCardPage({ index }) {
   )
 }
 
-/** @type {React.SFC<any>} */
+const backgrounds = {
+  boothStaff: `url(${require('./backgrounds/booth-staff.png')})`,
+  codeManiac: `url(${require('./backgrounds/code-maniac.png')})`,
+  communityInfluencer: `url(${require('./backgrounds/community-influencer.png')})`,
+  contributor: `url(${require('./backgrounds/contributor.png')})`,
+  general: `url(${require('./backgrounds/general-ticket.png')})`,
+  individualSponsor: `url(${require('./backgrounds/individual-sponsor.png')})`,
+  media: `url(${require('./backgrounds/media.png')})`,
+  speaker: `url(${require('./backgrounds/speaker.png')})`,
+  goldSponsor: `url(${require('./backgrounds/sponsor-gold.png')})`,
+  platinumSponsor: `url(${require('./backgrounds/sponsor-platinum.png')})`,
+  silverSponsor: `url(${require('./backgrounds/sponsor-silver.png')})`,
+  eventStaff: `url(${require('./backgrounds/staff.png')})`
+}
+
+/** @type {React.SFC<{ entry: import('./attendees').Attendee }>} */
 function NameCard({ entry: t }) {
-  const background = /General/.test(t['Ticket type'])
-    ? `url(${require('./namecard-general.png')})`
-    : '#000'
+  const background = backgrounds[t.ticketType] || 'red'
 
-  const override = overrides[t['Ticket']] || {}
-
-  let position = t['ตำแหน่ง / ชั้นปี']
-  if (override.year) {
-    position = `นักศึกษาปี ${position}`
-  }
-
-  const sth = s =>
-    String(s || '')
-      .replace(/^[ืิ]*/, '')
-      .replace(/^\s*-\s*$/, '')
+  const override = overrides[t.ticket] || {}
+  const speaker = t.ticketType === 'speaker'
+  const staff = t.ticketType === 'eventStaff'
+  const boxed = speaker || staff
 
   return (
     <div
@@ -47,11 +50,11 @@ function NameCard({ entry: t }) {
     >
       <div
         className="namecard"
-        onClick={() => prompt(`${t['Reference code']}`, t['Ticket'])}
-        data-id={t['Order number'].replace(/[#\s]/g, '')}
+        onClick={() => prompt(`${t.refCode}`, String(t.ticket))}
+        data-id={t.ticket}
         style={{
-          width: '1181px',
-          height: '1771px',
+          width: '1301px',
+          height: '1891px',
           background: `${background} center no-repeat`,
           backgroundSize: 'cover',
           overflow: 'hidden'
@@ -61,48 +64,46 @@ function NameCard({ entry: t }) {
           style={{
             fontFamily: 'Metropolis, Noto Sans Thai UI',
             padding: '64px',
-            paddingTop: '1050px',
-            height: '480px',
+            paddingTop: boxed ? '1047px' : '1121px', //'1050px',
+            height: boxed ? '512px' : '480px', //'480px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
             wordWrap: 'break-word',
-            color: '#fff'
+            color: staff ? '#343334' : '#fff'
           }}
         >
           <div>
             <div
               style={{
-                fontSize: `${120 * (override.nameScale || 1)}px`,
+                fontSize: `${120 * 1.1 * (override.nameScale || 1)}px`,
                 letterSpacing: `${(override.tight || 0) * -0.04}em`,
                 lineHeight: '1.2em',
                 fontWeight: 700
               }}
             >
-              {sth(override.name || t['ชื่อที่แสดงบนป้ายชื่อ'])
-                .split('\n')
-                .map((x, i) => (
-                  <Fragment key={i}>
-                    {i > 0 && <br />}
-                    {x}
-                  </Fragment>
-                ))}
+              {t.name.split('\n').map((x, i) => (
+                <Fragment key={i}>
+                  {i > 0 && <br />}
+                  {x}
+                </Fragment>
+              ))}
             </div>
             <div
               style={{
-                fontSize: '48px',
+                fontSize: `${48 * 1.1}px`,
                 lineHeight: '1.3em',
                 fontWeight: 700
               }}
             >
-              <div>{sth(override.position || position)}</div>
+              <div>{t.position}</div>
               <div
                 style={{
-                  color: '#858585'
+                  color: speaker ? '#fff' : '#858585'
                 }}
               >
-                {sth(override.company || t['บริษัท / สถาบันการศึกษา'])}
+                {t.company}
               </div>
             </div>
           </div>

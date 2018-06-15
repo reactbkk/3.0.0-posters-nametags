@@ -1,3 +1,79 @@
+export const sponsors = {
+  TELENOR: [
+    1823554,
+    1823588,
+    1823590,
+    1823591,
+    1823600,
+    1823601,
+    1823607,
+    1823623,
+    1824509,
+    1824586,
+    1824711,
+    1827124,
+    1840434,
+    1841110,
+    1841188
+  ],
+  EVENT_POP: [1823704, 1828094, 1828101, 1841112],
+  TENCENT: [1826689, 1828091, 1841550],
+  PRONTO_TOOLS: [1827162, 1827163, 1827201],
+  TASKWORLD: [1827505, 1841165],
+  THOUGHTWORKS: [1828167, 1828220, 1828244, 1832149, 1841253, 1841184],
+  METROMERCE: [1836647, 1836649, 1841193, 1840491],
+  RIVERPARK: [1841111],
+  PTT_DIGIRAL: [1840454],
+  IBM: [1841128],
+  PANTIP: [1841310],
+  TDA: [1841384],
+  NEXTZY: [1841455, 1841462, 1841464],
+  SIX: [1841536, 1841537, 1841540, 1841195]
+}
+
+export const SPEAKERS = new Set([
+  // P’ Net
+  1841073,
+  // TODO P’ Pond
+  // Keya
+  1836833,
+  // Manatsawin
+  1812594,
+  // Phoom
+  1817193,
+  // TODO AunAun
+  // Veha
+  1830724,
+  // Babedev
+  1812840,
+  // Cal
+  1822013,
+  // Holly
+  1820488,
+  // TODO Chris
+  // Ham
+  1830722,
+  // Benz
+  1841157
+])
+
+export const sponsoredTickets = {
+  PLATINUM: new Set([...sponsors.TELENOR]),
+  GOLD: new Set([
+    ...sponsors.TASKWORLD,
+    ...sponsors.THOUGHTWORKS,
+    ...sponsors.PTT_DIGIRAL
+  ]),
+  SILVER: new Set([
+    ...sponsors.EVENT_POP,
+    ...sponsors.SIX,
+    ...sponsors.TENCENT,
+    ...sponsors.NEXTZY,
+    ...sponsors.PRONTO_TOOLS,
+    ...sponsors.METROMERCE
+  ])
+}
+
 export const overrides = {
   '1816859': {
     year: true
