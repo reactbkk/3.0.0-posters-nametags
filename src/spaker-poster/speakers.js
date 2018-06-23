@@ -275,6 +275,25 @@ export const speakers = {
       }
       photo={require('./photo/toon.jpg')}
     />
+  ),
+  ranatchai_chernbamrung: (
+    <Speaker
+      name="Ranatchai Chernbamrung"
+      position={
+        <Text>
+          Co-founder & CTO<At />Cleverse
+        </Text>
+      }
+      title={<div>A Brief Summary of React in 2018</div>}
+      descriptionScale={6 / 5}
+      description={
+        <Text>
+          React เปลี่ยนอะไรไปบ้างในปีนี้<br />
+          มาฟังสรุปฟีเจอร์<br />และผลกระทบต่อเรากันครับ
+        </Text>
+      }
+      photo={require('./photo/ranatchai.jpg')}
+    />
   )
 }
 
